@@ -39,17 +39,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-<style>
-#colCheckBox {
-	text-align: center;
-}
-.textfield{
-padding-bottom:5px;
-}
-</style>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 
 <body>
@@ -174,26 +163,21 @@ padding-bottom:5px;
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 style="text-align: center" class="page-header">Book
-						Management</h1>
+					<h1 class="page-header">Author Management</h1>
 				</div>
 				<!-- /.col-lg-12 -->
-
 			</div>
+
 			<div class="row" id="button-1">
-
-				<button type="button" class="btn btn-info" data-toggle="modal"
-					data-target="#myModalAdd">Add</button>
-				<button type="button" class="btn btn-info" data-toggle="modal"
-					data-target="#myModalEdit">Edit</button>
-
-				<button type="button" class="btn btn-info" data-toggle="modal">Delete</button>
-
-				<button type="button" class="btn btn-info" data-toggle="modal"
-					data-target="#myModalDetail">Detail</button>
-
+				<div class="col-lg-12">
+					<button type="button" class="btn btn-sm btn-success"
+						data-toggle="modal" data-target="#myModalAdd">
+						<span class="glyphicon glyphicon-plus"> </span> Add new book
+					</button>
+					<br>
+				</div>
 			</div>
-			</br>
+
 			<!-- /.row -->
 			<div class="row">
 				<div class="col-lg-12">
@@ -210,10 +194,8 @@ padding-bottom:5px;
 										<th>ID Book</th>
 										<th>Book Name</th>
 										<th>Author</th>
-										<th style="text-align: center;">Produce</th>
-
-										<th style="text-align: center;">Price</th>
-
+										<th>Type</th>
+										<th style="text-align: center;"></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -221,10 +203,26 @@ padding-bottom:5px;
 										<td id="colCheckBox"><input type="checkbox"
 											name="checkbox" id="checkbox"></td>
 										<td>313221</td>
-										<td>Dac Nhan Tam</td>
-										<td>Ho Chi Minh</td>
-										<td style="text-align: center;">0969817806/tuanvu@gmail.com</td>
-										<td style="text-align: center;">345453</td>
+										<td>Đắc nhân tâm</td>
+										<td>Dale Canegie</td>
+										<td>Kỹ năng sống</td>
+										<td style="text-align: center;"><button
+												class="btn btn-abc"
+												style="color: white; background-color: #5bc0de">
+												<span class="glyphicon glyphicon-info-sign"
+													aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-edit"
+												style="color: white; background-color: blue;"
+												data-toggle="modal" data-target="#myModalEdit">
+												<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-delete " type="button"
+												style="color: white; background-color: red;">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true">
+												</span>
+											</button></td>
+
 
 									</tr>
 
@@ -232,12 +230,56 @@ padding-bottom:5px;
 										<td id="colCheckBox"><input type="checkbox"
 											name="checkbox" id="checkbox"></td>
 										<td>313221</td>
-										<td>Nguyen Tuan Vu</td>
-										<td>Ho Chi Minh</td>
-										<td style="text-align: center;">0969817806/tuanvu@gmail.com</td>
-										<td style="text-align: center;">453534</td>
+										<td>Đạo đức kinh</td>
+										<td>Lão tử</td>
+										<td>Triết học</td>
+										<td style="text-align: center;"><button
+												class="btn btn-abc"
+												style="color: white; background-color: #5bc0de">
+												<span class="glyphicon glyphicon-info-sign"
+													aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-edit"
+												style="color: white; background-color: blue;"
+												data-toggle="modal" data-target="#myModalEdit">
+												<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-delete " type="button"
+												style="color: white; background-color: red;">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true">
+												</span>
+											</button></td>
+
 
 									</tr>
+
+									<tr class="odd gradeX">
+										<td id="colCheckBox"><input type="checkbox"
+											name="checkbox" id="checkbox"></td>
+										<td>313221</td>
+										<td>Cha giàu cha nghèo</td>
+										<td>Kiosaky</td>
+										<td>Kinh tế - quản lý</td>
+										<td style="text-align: center;"><button
+												class="btn btn-abc"
+												style="color: white; background-color: #5bc0de">
+												<span class="glyphicon glyphicon-info-sign"
+													aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-edit"
+												style="color: white; background-color: blue;"
+												data-toggle="modal" data-target="#myModalEdit">
+												<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											</button>
+											<button class="btn btn-delete " type="button"
+												style="color: white; background-color: red;">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true">
+												</span>
+											</button></td>
+
+
+									</tr>
+
 								</tbody>
 							</table>
 							<!-- /.table-responsive -->
@@ -249,32 +291,67 @@ padding-bottom:5px;
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h2 style="text-align:center;" class="modal-title">Form Add</h2>
+											<h2 style="text-align: center;" class="modal-title">Add
+												new book</h2>
 										</div>
 										<!-- Modal body-->
 										<div class="modal-body" id="bodyFormAdd">
 
-											<div style="float: left; width: 40%;padding-left:60px" class="row col1">
-												<h6>Book code</h6>
-												<h6>Book Name</h6>
-												<h6>Author Name</h6>
-												<h6>Price</h6>
-												<h6>Data publication</h6>
-												<h6>Safe off</h6>
-												<h6>Cover image</h6>
-												<h6>Description</h6>
+											<div class="row">
+												<div class="col-lg-3">
+													<h6>Name:</h6>
+												</div>
+												<div class="col-lg-9">
+													<input type="text" name="name" class="textfield" id="tf2"
+														name="name" style="width: 100%">
+												</div>
 											</div>
-											<div class="row col2" style="float: left; width: 60%;">
 
-												<input type="text" class="textfield" id="tf1">
-												<input type="text" class="textfield" id="tf2">
-												<input type="text" class="textfield" id="tf3">
-												<input type="text" class="textfield" id="tf4">
-												<input type="text" class="textfield" id="tf5">
-												<input type="text" class="textfield" id="tf6">
-												
-												<td><input type="button" value="Browser" class="button"></td>
-												<td><input type="text" name="textfield" id="textfield"></td>
+											<div class="row">
+												<div class="col-lg-3">
+													<h6>Author:</h6>
+												</div>
+												<div class="col-lg-9">
+													<input type="text" name="author" class="textfield" id="tf3"
+														name="author" style="width: 100%">
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-lg-3">
+													<h6>Type:</h6>
+												</div>
+												<div class="col-lg-9 form-group">
+													<select class="" id="sel1" style="width: 60%">
+														<option>Kinh tế - Quản lý</option>
+														<option>Kỹ năng sống</option>
+														<option>Marketing</option>
+														<option>Y học</option>
+														<option>Khoa học</option>
+													</select>
+												</div>
+												<!-- 												<div class="col-lg-9"> -->
+												<!-- 													<input type="text" name="type" class="textfield" id="tf3" -->
+												<!-- 														name="type" style="width: 100%"> -->
+												<!-- 												</div> -->
+											</div>
+
+											<div class="row">
+												<div class="col-lg-3">
+													<h6>Image:</h6>
+												</div>
+												<div class="col-lg-9">
+													<input type="file" id="img" name="img">
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-lg-3">
+													<h6>File:</h6>
+												</div>
+												<div class="col-lg-9">
+													<input type="file" id="pdf" name="pdf">
+												</div>
 											</div>
 
 										</div>
@@ -345,13 +422,11 @@ padding-bottom:5px;
 		</div>
 		<!-- /#page-wrapper -->
 	</div>
-	</div>
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
-	<script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -368,12 +443,12 @@ padding-bottom:5px;
 
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
-        $(document).ready(function() {
-            $('#dataTables-example').DataTable({
-                responsive: true
-            });
-        });
-        </script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+	</script>
 
 </body>
 
